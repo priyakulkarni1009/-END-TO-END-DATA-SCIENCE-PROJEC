@@ -1,0 +1,27 @@
+#TASK 3
+!pip install pulp
+# Import necessary library
+from pulp import LpMaximize, LpProblem, LpVariable, value
+
+# 1. Define the Problem
+model = LpProblem("Product_Mix_Optimization", LpMaximize)
+
+# 2. Define Decision Variables (number of units to produce)
+A = LpVariable("Product_A", lowBound=0, cat="Continuous")  # Product A
+B = LpVariable("Product_B", lowBound=0, cat="Continuous")  # Product B
+
+# 3. Define Objective Function (Maximize Profit)
+model += 30 * A + 50 * B, "Total Profit"
+
+# 4. Define Constraints
+model += 2 * A + 1 * B <= 80, "Machine_1 Capacity"
+model += 1 * A + 2 * B <= 60, "Machine_2 Capacity"
+
+# 5. Solve the Optimization Problem
+model.solve()
+
+# 6. Display Results
+print("Optimal Production Plan:")
+print(f"Product A: {A.varValue} units")
+print(f"Product B: {B.varValue} units")
+print(f"Total Profit: ${value(model.objective)}")
