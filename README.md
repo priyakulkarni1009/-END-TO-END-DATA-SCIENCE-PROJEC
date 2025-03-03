@@ -71,3 +71,5 @@ Finally, the results of the project need to be communicated effectively to stake
 ### Conclusion
 
 An end-to-end data science project involves a series of critical steps, including understanding the problem, gathering data, cleaning and preprocessing data, building machine learning models, and evaluating their performance. Once the model is deployed, it is important to continuously monitor its performance. Throughout the project, effective communication with stakeholders ensures the results are understood and actionable.
+
+![Image](https://github.com/user-attachments/assets/fc0a518c-3297-49ce-ad28-26ab044bb32c)
